@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "./layout"
 
 export default class postLayout extends Component {
@@ -16,6 +16,7 @@ export default class postLayout extends Component {
             }}
           />
         </div>
+        <Link to="/">Go Home</Link>
       </Layout>
     )
   }
