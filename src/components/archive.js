@@ -1,6 +1,6 @@
 import React from "react"
 
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 const POST_ARCHIVE_QUERY = graphql`
   query BlogPostArchive {
@@ -30,10 +30,10 @@ function Archive() {
                 {allMarkdownRemark.edges.map((edge, index) => (
                   <li key={index}>
                     {" "}
-                    <a href={edge.node.frontmatter.slug}>
+                    <Link to={`/posts${edge.node.frontmatter.slug}`}>
                       {" "}
                       {edge.node.frontmatter.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
