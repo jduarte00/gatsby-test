@@ -19,6 +19,7 @@ const MainLayout = styled.main`
   margin: 0 auto;
   display: grid;
   grid-template-columns: 4fr 1fr;
+  grid-gap: 40px;
 `
 
 const Layout = ({ children }) => (
