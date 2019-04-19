@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 import Header from "./header"
 import Archive from "./archive"
@@ -29,6 +30,13 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+          }
+        }
+        file(relativePath: { regex: "/bg/" }) {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }
