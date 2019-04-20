@@ -35,7 +35,7 @@ const Layout = ({ children }) => (
         file(relativePath: { regex: "/bg/" }) {
           childImageSharp {
             fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -44,6 +44,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <Img fluid={data.file.childImageSharp.fluid} />
         <MainLayout>
           <main>{children}</main>
           <Archive />
